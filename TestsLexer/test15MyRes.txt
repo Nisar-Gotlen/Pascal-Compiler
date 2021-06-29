@@ -1,0 +1,21 @@
+1 1    Identifier    a    a
+1 3    Unary operator    +    +
+1 5    Identifier    b    b
+2 1    Integer    1    1
+2 2    Unary operator    +    +
+2 3    Integer    2    2
+3 1    Unary operator    -    -
+4 1    Addition operator    *    *
+5 1    Addition operator    **    **
+6 1    Addition operator    /    /
+7 1    Reserved Word    div    div
+8 1    Reserved Word    mod    mod
+9 1    Identifier    a    a
+9 3    Relation operator    >    >
+9 5    Identifier    b    b
+10 1    Integer    1    1
+10 2    Relation operator    <    <
+10 3    Integer    2    2
+11 1    Relation operator    >=    >=
+12 1    Relation operator    <=    <=
+

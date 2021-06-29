@@ -21,9 +21,9 @@ class ParseExecute:
                 f = open(self.path[:-4] + 'MyRes.txt', 'w')
                 lexer = Lexer(self.path)
                 lexer.getNextLexem()
-                res = ExprParser(lexer).parseExpr()
+                res = ExprParser(lexer).ParseExpr()
                 if res:
-                    res = res.Print()
+                    res = res.Print(0)
                 f.write(res)
                 f.close()
             except UnicodeDecodeError:
@@ -42,20 +42,17 @@ class ParseExecute:
                     self.testFileParser(file, abs_path)
                 except UnicodeDecodeError:
                     print(f"{abs_path} 'utf-8' codec can't decode byte")
-            print(
-                f"\nВсего тестов: {self.count_all}\nИз них успешных: {self.count_all - self.count_failed}"
-            )
 
     def testFileParser(self, file, path):
         self.passed = True
         if ('Answer' not in file) and ('MyRes' not in file):
             try:
-                f = open(self.path[:-4] + 'MyRes.txt', 'w')
-                lexer = Lexer(self.path)
+                f = open(path[:-4] + 'MyRes.txt', 'w')
+                lexer = Lexer(path)
                 lexer.getNextLexem()
-                res = ExprParser(lexer).parseExpr()
+                res = ExprParser(lexer).ParseExpr()
                 if res:
-                    res = res.Print()
+                    res = res.Print(0)
                 f.write(res)
                 f.close()
             except UnicodeDecodeError:

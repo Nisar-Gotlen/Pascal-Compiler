@@ -1,0 +1,9 @@
+1 1    Integer    2    2
+2 1    Integer    15    15
+3 1    Real    2.5    2.5
+4 1    Real    15.0    15.0
+5 1    Real    500.0    5e2
+6 1    Real    50.0    0.5e2
+7 1    Real    50.0    0.5e+2
+8 1    Real    0.005    0.5e-2
+

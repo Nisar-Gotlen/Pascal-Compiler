@@ -1,0 +1,11 @@
+1 1    Reserved Word    div    div
+1 4    Addition operator    *    *
+1 5    Reserved Word    mod    mod
+1 8    Unary operator    +    +
+1 9    Integer    13    13
+1 11    Unary operator    +    +
+1 12    Identifier    szd    szd
+2 1    Unary operator    -    -
+2 2    Identifier    fgdxf    fgdxf
+3 1    Real    1.2e-06    1.2e-6
+

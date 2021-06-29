@@ -29,7 +29,7 @@ class LexExecute:
             except UnicodeDecodeError:
                 print(f"{self.path} 'utf-8' codec can't decode byte")
             except Exception as e:
-                f.write(str(e))
+                f.write(str(e) + '\n')
                 f.close()
 
     def compileLexDir(self):
@@ -54,7 +54,7 @@ class LexExecute:
                     f.write(lex.getTokens() + '\n')
                 f.close()
             except Exception as e:
-                f.write(str(e))
+                f.write(str(e) + '\n')
                 f.close()
 
             fMyRes = open(path[:-4] + 'MyRes.txt', 'r')
