@@ -106,6 +106,15 @@ class Lexer:
         self.token = Token(coordinates, type, code, value)
         return self.token
 
+    def getCurrLex(self):
+        return self.token
+
+    def getValue(self):
+        return self.value
+
+    def keepCoordinates(self):
+        self.coordinates = f"{self.line}:{self.column}"
+
     def getNextLexem(self):
         self.clearBuffer()
         while self.symbol or self.buffer:
