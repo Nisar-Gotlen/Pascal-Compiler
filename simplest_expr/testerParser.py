@@ -1,58 +1,65 @@
-import os.path
 from lexer.lexer import Lexer
 from simplest_expr.exprParser import ExprParser
+import os.path
 
 
-class LexExecute:
+class ParseExecute:
     def __init__(self, range, path):
         self.range = range
         self.path = path
-        self.compileLexer()
+        self.compilerParser()
 
-    def compileLexer(self):
+    def compilerParser(self):
         if self.range == 1:
-            self.compileLexFile()
+            self.compilerParserFile()
         elif self.range == 2:
-            self.compileLexDir()
+            self.compilerParserDirectory()
 
-    def compileLexFile(self):
+    def compilerParserFile(self):
         if os.path.isfile(self.path):
             try:
                 f = open(self.path[:-4] + 'MyRes.txt', 'w')
                 lexer = Lexer(self.path)
-                lex = lexer.getNextLexem()
-                f.write(lex.getTokens() + '\n')
-                while lex.notEOF():
-                    lex = lexer.getNextLexem()
-                    f.write(lex.getTokens() + '\n')
+                lexer.getNextLexem()
+                res = ExprParser(lexer).parseExpr()
+                if res:
+                    res = res.Print()
+                f.write(res)
                 f.close()
             except UnicodeDecodeError:
                 print(f"{self.path} 'utf-8' codec can't decode byte")
             except Exception as e:
                 f.write(str(e))
                 f.close()
+        else:
+            print("ERROR")
 
-    def compileLexDir(self):
+    def compilerParserDirectory(self):
         if os.path.isdir(self.path):
             for file in os.listdir(self.path):
                 try:
                     abs_path = os.path.join(self.path, file)
-                    self.testFileLexer(file, abs_path)
+                    self.testFileParser(file, abs_path)
                 except UnicodeDecodeError:
                     print(f"{abs_path} 'utf-8' codec can't decode byte")
+            print(
+                f"\nВсего тестов: {self.count_all}\nИз них успешных: {self.count_all - self.count_failed}"
+            )
 
-    def testFileLexer(self, file, path):
+    def testFileParser(self, file, path):
         self.passed = True
         if ('Answer' not in file) and ('MyRes' not in file):
-            f = open(path[:-4] + 'MyRes.txt', 'w')
             try:
-                lexer = Lexer(path)
-                lex = lexer.getNextLexem()
-                f.write(lex.getTokens() + '\n')
-                while lex.notEOF():
-                    lex = lexer.getNextLexem()
-                    f.write(lex.getTokens() + '\n')
+                f = open(self.path[:-4] + 'MyRes.txt', 'w')
+                lexer = Lexer(self.path)
+                lexer.getNextLexem()
+                res = ExprParser(lexer).parseExpr()
+                if res:
+                    res = res.Print()
+                f.write(res)
                 f.close()
+            except UnicodeDecodeError:
+                print(f"{self.path} 'utf-8' codec can't decode byte")
             except Exception as e:
                 f.write(str(e))
                 f.close()
