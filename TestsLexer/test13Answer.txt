@@ -1,0 +1,6 @@
+1 1    Identifier    a    a
+2 1    Identifier    ab    ab
+3 1    Identifier    ab12    ab12
+4 1    Identifier    ab_12    ab_12
+5 1    Reserved Word    begin    begin
+

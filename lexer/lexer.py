@@ -205,8 +205,9 @@ class Lexer:
                     self.keepSymbol()
                 elif self.buffer + self.symbol == "//":
                     self.keepSymbol()
-                    self.state == LexemesList.KComment
-                else:
+                    self.state = LexemesList.KComment
+
+                elif self.buffer != '//':
                     self.state = ""
                     if self.buffer in self.assignments:
                         lexeme_state = LexemesList.KAssignment.value
@@ -218,6 +219,7 @@ class Lexer:
                         lexeme_state = LexemesList.kAddOperator.value
                     elif self.buffer in self.mulOperator:
                         lexeme_state = LexemesList.kMulOperator.value
+
                     return self.getToken(self.coordinates, lexeme_state,
                                          self.buffer, self.buffer)
 
@@ -235,11 +237,11 @@ class Lexer:
                                                   or self.symbol == "\n"):
                     self.state = ""
                     self.clearBuffer()
-                    self.newLine()
+                    self.nextLine()
                     self.getSymbol()
                 elif self.symbol == '\n':
                     self.addBuffer()
-                    self.newLine()
+                    self.nextLine()
                     self.getSymbol()
                 elif not self.symbol:
                     self.buff = self.buffer.encode("unicode_escape").decode(

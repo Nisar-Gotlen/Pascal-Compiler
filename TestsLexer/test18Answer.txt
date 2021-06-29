@@ -1,0 +1,28 @@
+1 1    Reserved Word    var    var
+2 2    Identifier    i    i
+2 3    Delimiter    ,    ,
+2 4    Identifier    N    N
+2 5    Delimiter    :    :
+2 6    Type Identifier    integer    integer
+2 13    Delimiter    ;    ;
+3 2    Identifier    fg    fg
+3 4    Delimiter    :    :
+3 5    Type Identifier    real    real
+3 9    Delimiter    ;    ;
+4 1    Reserved Word    begin    begin
+5 1    Reserved Word    for    for
+5 5    Identifier    i    i
+5 6    Assignment    :=    :=
+5 8    Integer    1    1
+5 10    Reserved Word    to    to
+5 13    Identifier    N    N
+5 15    Reserved Word    do    do
+6 2    Identifier    fg    fg
+6 5    Assignment    :=    :=
+6 8    Identifier    fg    fg
+6 11    Addition operator    *    *
+6 13    Real    0.5    0.5
+6 16    Delimiter    ;    ;
+7 1    Reserved Word    end    end
+7 4    Delimiter    .    .
+
