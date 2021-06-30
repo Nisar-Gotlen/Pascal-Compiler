@@ -1,5 +1,5 @@
 1 1    Reserved Word    div    div
-1 4    Addition operator    *    *
+1 4    Multiple operator    *    *
 1 5    Reserved Word    mod    mod
 1 8    Unary operator    +    +
 1 9    Integer    13    13

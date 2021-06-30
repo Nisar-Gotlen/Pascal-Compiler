@@ -5,9 +5,9 @@
 2 2    Unary operator    +    +
 2 3    Integer    2    2
 3 1    Unary operator    -    -
-4 1    Addition operator    *    *
-5 1    Addition operator    **    **
-6 1    Addition operator    /    /
+4 1    Multiple operator    *    *
+5 1    Multiple operator    **    **
+6 1    Multiple operator    /    /
 7 1    Reserved Word    div    div
 8 1    Reserved Word    mod    mod
 9 1    Identifier    a    a

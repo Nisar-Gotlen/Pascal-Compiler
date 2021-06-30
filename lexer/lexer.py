@@ -70,7 +70,7 @@ class Lexer:
 
         self.state = ""
         self.line, self.column = 1, 1
-        self.buffer, self.unget, self.coordinates = "", "", ""
+        self.buffer, self.lilerBuffer, self.unget, self.coordinates = "", "", "", ""
 
     def clearBuffer(self):
         self.buffer = ""
